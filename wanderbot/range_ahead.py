@@ -7,5 +7,5 @@ def scan_callback(msg):
   print "range ahead: %0.1f" % range_ahead
 
 rospy.init_node('range_ahead')
-scan_sub = rospy.Subscriber('scan', LaserScan, scan_callback)
+scan_sub = rospy.Subscriber('/base_scan', LaserScan, scan_callback)
 rospy.spin()

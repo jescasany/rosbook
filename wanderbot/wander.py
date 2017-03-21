@@ -8,7 +8,7 @@ def scan_callback(msg):
   g_range_ahead = min(msg.ranges)
 
 g_range_ahead = 1 # anything to start
-scan_sub = rospy.Subscriber('scan', LaserScan, scan_callback)
+scan_sub = rospy.Subscriber('/base_scan', LaserScan, scan_callback)
 cmd_vel_pub = rospy.Publisher('cmd_vel', Twist, queue_size=1)
 rospy.init_node('wander')
 state_change_time = rospy.Time.now()
